@@ -1,0 +1,20 @@
+<section id="donaciones">
+  <h2>Haz tu donación</h2>
+  <p>Con tu ayuda podemos continuar nuestros proyectos.</p>
+  <form onsubmit="return validarDonacion()">
+    <label>Monto:</label>
+    <input type="number" name="monto" id="monto" min="1" required>
+    <button type="submit">Donar ahora</button>
+  </form>
+</section>
+
+<script>
+  function validarDonacion() {
+    var monto = document.getElementById('monto').value;
+    if (monto <= 0) {
+      alert('El monto debe ser mayor a cero.');
+      return false;
+    }
+    return confirm('¿Deseas donar $' + monto + '?');
+  }
+</script>
